@@ -15,7 +15,7 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 16000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "16000"))
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID"))
@@ -51,12 +51,12 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "409e31d3ddd64af08cfcc3b
 
 
 # Maximum limit for fetching playlist's track from youtube, spotify, apple links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 2500))
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "2500"))
 
 
 # Telegram audio and video file size limit (in bytes)
-TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 104857600))
-TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
+TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", "104857600"))
+TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "1073741824"))
 # Checkout https://www.gbmb.org/mb-to-bytes for converting mb to bytes
 
 # Time after which bot will suggest random chats about bot commands.
@@ -101,40 +101,63 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv(
-    "START_IMG_URL", "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
-)
+START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg")
+
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+    "PING_IMG_URL",
+    "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg",
 )
+
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
+GLOBAL_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 STATS_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 STREAM_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 SOUNCLOUD_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 YOUTUBE_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 SPOTIFY_ARTIST_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
 SPOTIFY_PLAYLIST_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
 
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(
+        int(x) * 60**i
+        for i, x in enumerate(reversed(stringt.split(":")))
+    )
 
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
+SONG_DOWNLOAD_DURATION_LIMIT = int(
+    time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
+)
 
 
-if SUPPORT_CHANNEL:
-    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+if UPSTREAM_REPO:
+    if not re.match("(?:http|https)://", UPSTREAM_REPO):
+        print(
+            "[ERROR] - Your UPSTREAM_REPO url is wrong. Please ensure that it starts with https://"
         )
+        sys.exit()
 
-if SUPPORT_CHAT:
-    if not re.match("(?:http|https)://", SUPPORT_CHAT):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-        )
+if PING_IMG_URL:
+    if PING_IMG_URL != "assets/Ping.jpeg":
+        if not re.match("(?:http|https)://", PING_IMG_URL):
+            PING_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
+
+if START_IMG_URL:
+    if START_IMG_URL != "assets/Ping.jpeg":
+        if not re.match("(?:http|https)://", START_IMG_URL):
+            START_IMG_URL = "https://te.legra.ph/file/e40c23fbcbb6db096e571.jpg"
