@@ -31,8 +31,8 @@ def track_markup(_, videoid, user_id, channel, fplay):
         ],
         [
             InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
+                text=f"✨𝑴𝒂𝒊𝒏 𝑪𝒉𝒂𝒏𝒏𝒆𝒍✨",
+              url="https://t.me/DevilServers",
             ),
         ],
     ]
@@ -92,8 +92,8 @@ def stream_markup_timer(_, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
+                text=f"✨𝑴𝒂𝒊𝒏 𝑪𝒉𝒂𝒏𝒏𝒆𝒍✨",
+              url="https://t.me/DevilServers",
             ),
         ],
     ]
@@ -128,8 +128,8 @@ def stream_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
+                text=f"✨𝑴𝒂𝒊𝒏 𝑪𝒉𝒂𝒏𝒏𝒆𝒍✨",
+              url="https://t.me/DevilServers",
             ),
         ],
     ]
@@ -257,8 +257,8 @@ def queue_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
+                text=f"✨𝑴𝒂𝒊𝒏 𝑪𝒉𝒂𝒏𝒏𝒆𝒍✨",
+              url="https://t.me/DevilServers",
             ),
         ],
     ]
