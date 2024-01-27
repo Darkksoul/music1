@@ -14,7 +14,7 @@ def start_panel(_):
         [
             InlineKeyboardButton(text="✨𝑯𝒆𝒍𝒑✨", callback_data="settings_back_helper"),
             InlineKeyboardButton(
-                text="☢ 𝐒𝙴𝚃 ☢", callback_data="settings_helper"
+                text="✨𝑺𝒆𝒕✨", callback_data="settings_helper"
             ),
         ],
         [
