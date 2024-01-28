@@ -124,7 +124,6 @@ async def handle_member_update(client: app, member: ChatMemberUpdated):
         await client.send_photo(
             chat_id=member.chat.id,
             photo=welcome_photo,
-            #caption=caption,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton(button_text, url=deep_link)],
                 [InlineKeyboardButton(text=add_button_text, url=add_link)],
