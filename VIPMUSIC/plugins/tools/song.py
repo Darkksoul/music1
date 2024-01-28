@@ -39,7 +39,7 @@ async def download_media(message: Message, audio: bool = True):
         ]
 
         quality_buttons = [
-            InlineKeyboardButton(option["label"], callback_data=f'_{media_link}_{media_title}_{audio}')#{option["itag"]} 
+            InlineKeyboardButton(option["label"], callback_data=f'{media_title}')#{option["itag"]} 
             for option in quality_options
         ]
         markup = InlineKeyboardMarkup([quality_buttons])
