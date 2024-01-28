@@ -107,19 +107,13 @@ async def handle_member_update(client: app, member: ChatMemberUpdated):
         if member.new_chat_member:
             # Welcome message for new members
             caption = (
-            f"**🌷𝐇ᴇʏ {member.new_chat_member.user.mention}**\n\n**🏘𝐖ᴇʟᴄᴏᴍᴇ 𝐈ɴ 𝐍ᴇᴡ 𝐆ʀᴏᴜᴘ🥳**\n\n"
+            f"**Hello {member.new_chat_member.user.mention}**\n\n**🏘𝐖ᴇʟᴄᴏᴍᴇ 𝐈ɴ 𝐍ᴇᴡ 𝐆ʀᴏᴜᴘ🥳**\n\n"
             f"**📝** {chat.title}\n"
             f"**🔐ʟɪɴᴋ » @{chat.username}**\n➖➖➖➖➖➖➖➖➖➖➖\n"
             f"**๏ ᴍᴇᴍʙᴇʀ ɪᴅ »** `{member.new_chat_member.user.id}`\n"
-            f"**๏ ᴜsᴇʀɴᴀᴍᴇ » @{member.new_chat_member.user.username}**\n➖➖➖➖➖➖➖➖➖➖➖\n"
-            f"**👥ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀ ɴᴏᴡ » {count}**"
+            f"**๏ ᴜsᴇʀɴᴀᴍᴇ » @{member.new_chat_member.user.username}**\n➖➖➖➖➖➖➖➖➖➖➖\
             )
             button_text = "๏ ᴠɪᴇᴡ ɴᴇᴡ ᴍᴇᴍʙᴇʀ ๏"
-            add_button_text = "๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏"
-        else:
-            # Farewell message for members who have left
-            caption = f"**❅─────✧❅✦❅✧─────❅**\n\n**๏ ᴀ ᴍᴇᴍʙᴇʀ ʟᴇғᴛ ᴛʜᴇ ɢʀᴏᴜᴘ🥀**\n\n**➻** {member.old_chat_member.user.mention}\n\n**๏ ᴏᴋ ʙʏᴇ ᴅᴇᴀʀ ᴀɴᴅ ʜᴏᴘᴇ ᴛᴏ sᴇᴇ ʏᴏᴜ ᴀɢᴀɪɴ ɪɴ ᴛʜɪs ᴄᴜᴛᴇ ɢʀᴏᴜᴘ ᴡɪᴛʜ ʏᴏᴜʀ ғʀɪᴇɴᴅs✨**\n\n**ㅤ•─╼⃝𖠁 ʙʏᴇ ♡︎ ʙᴀʙʏ 𖠁⃝╾─•**"
-            button_text = "๏ ᴠɪᴇᴡ ʟᴇғᴛ ᴍᴇᴍʙᴇʀ ๏"
             add_button_text = "๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏"
 
         # Generate a deep link to open the user's profile
