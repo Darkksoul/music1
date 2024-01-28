@@ -40,9 +40,9 @@ async def download_media(message: Message, audio: bool = True):
 
         quality_buttons = [
             InlineKeyboardButton(option["label"], callback_data=f'{option["itag"]}_{media_link}') #_{media_title}_{audio}')
-        ]    
             for option in quality_options
-        markup = InlineKeyboardMarkup([quality_buttons]),
+        ]
+        markup = InlineKeyboardMarkup([quality_buttons])
         await aux.edit(f"**Choose the preferred {command_name} quality:**", reply_markup=markup)
 
     except Exception as e:
