@@ -59,3 +59,9 @@ def download_song(_, message):
     except Exception as e:
         m.edit(" - An error !!")
         print(e)
+    
+    try:
+        os.remove(audio_file)
+        os.remove(thumb_name)
+    except Exception as e:
+        print(e)
